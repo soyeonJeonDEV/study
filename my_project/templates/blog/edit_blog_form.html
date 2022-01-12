@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시물 수정</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+</head>
+<body>
+<div class="container">
+
+    <h1 class="page-holder" align="center">게시물 수정</h1>
+    <table class="table">
+        <form action="/blog/edit_blog/" method="post"/>
+            {% csrf_token %}
+        <tbody>
+        <tr>
+            <th>아이디</th>
+            <td><input name="id" value="{{blog.id}}" class="form-control"></td>
+        </tr>
+         <tr>
+            <th>제목</th>
+            <td><input name="title" value="{{blog.title}}" class="form-control"></td>
+        </tr>
+         <tr>
+            <th>작성자</th>
+            <td><input name="writer" value="{{blog.writer}}" class="form-control"></td>
+        </tr>
+<!--         <tr>-->
+<!--            <th>작성일</th>-->
+<!--            <td><input name="created_at" value="{{blog.created_at}}" class="form-control"></td>-->
+<!--        </tr>-->
+         <tr>
+            <th>내용</th>
+             <td><textarea name="content" class="form-control">{{blog.content}}</textarea></td>
+         </tr>
+        <tr>
+            <td><input type="submit" value="수정" class="btn btn-primary"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
